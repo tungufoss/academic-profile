@@ -54,7 +54,7 @@ Do not put these concerns here:
 
 Reporting scheme modules must be public-safe and source-cited. Each plugin should document canonical public source URLs, source dates or review dates, direct source requirements, project interpretations, and ambiguous rules requiring human review.
 
-Future Icelandic public-universities or Matskerfi plugin work should start from public sources documented in `docs/reporting-schemes.md` and should verify current source documents before implementing rules.
+The Icelandic public-universities plugin (`academic_profile.schemes.icelandic_universities`) is bundled and documented in `docs/reporting-schemes.md`. Its scheme data is `draft_for_review`. Verify the current public source documents before changing rules, keep Icelandic labels as published, and record unresolved differences between sources as `review_note` values instead of resolving them silently.
 
 ## Release Expectations
 
