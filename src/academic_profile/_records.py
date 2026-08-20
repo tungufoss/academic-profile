@@ -12,9 +12,7 @@ class ProfileRecord:
 
     id: str
     title: str
-    tags: tuple[str, ...] = ()
-    source_urls: tuple[str, ...] = ()
-    extra: dict[str, Any] = field(default_factory=dict)
+    extra: dict[str, Any] = field(default_factory=dict, compare=False, hash=False)
 
     def __post_init__(self) -> None:
         if not self.id.strip():
