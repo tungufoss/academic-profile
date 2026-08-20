@@ -1,0 +1,919 @@
+{
+  "id": "matskerfi-opinberra-haskola",
+  "title_is": "Matskerfi opinberra háskóla",
+  "status": "draft_for_review",
+  "derived_from_pdf_extraction": true,
+  "reviewed_on": "2026-08-20",
+  "sources": [
+    {
+      "source_id": "matskerfi-2013",
+      "title": "Matskerfi opinberra háskóla",
+      "published_on": "2013-12",
+      "reviewed_on": "2026-08-20",
+      "url": "https://fh.hi.is/files/2023-07/matskerfi_opinberra_haskola_des_2013.pdf",
+      "role": "point_scheme"
+    },
+    {
+      "source_id": "almennar-leidbeiningar-2024",
+      "title": "Leiðbeiningar um framtal starfa (ársmat og grunnmat)",
+      "published_on": "2024-12-11",
+      "reviewed_on": "2026-08-20",
+      "url": "https://hi.is/sites/default/files/sverrirg/almennar_leidbeiningar_11.des_2024.pdf",
+      "role": "evidence_and_entry_guidance"
+    }
+  ],
+  "review_notes": [
+    "This is an initial reviewed draft from local PDF text extraction, not an authoritative schema.",
+    "Original Icelandic labels are preserved. English labels should be added only after review.",
+    "Page extraction from both PDFs was used as draft material; compare against the source PDFs before wiring this into validation.",
+    "The 2024 guidance refers to matsreglur set 17 December 2021 and differs from the 2013 scheme in some details, including D-code numbering and patent/software guidance. Those conflicts are marked on affected entries.",
+    "A10.7 art subcodes from Appendix II are included as a draft list but need specialist review before use."
+  ],
+  "rules": {
+    "multi_author": {
+      "source": "matskerfi-2013",
+      "applies_to": [
+        "A2",
+        "A3",
+        "A4",
+        "A5",
+        "A7",
+        "A8",
+        "A9",
+        "A10"
+      ],
+      "formula": {
+        "two_authors": "1.5 * points / 2",
+        "three_authors": "1.8 * points / 3",
+        "four_or_more_authors": "2.0 * points / number_of_authors"
+      },
+      "annual_bonus": {
+        "draft_note": "Up to two multi-author works can receive half the difference between divided points and base points under the conditions described in the source."
+      }
+    },
+    "submission_required": {
+      "source": "matskerfi-2013",
+      "note_is": "Engin stig, hvorki fyrir rannsóknir, kennslu né annað, eru veitt fyrr en fullnægjandi framtali hefur verið skilað."
+    }
+  },
+  "sections": [
+    {
+      "code": "A",
+      "label_is": "Rannsóknir",
+      "entries": [
+        {
+          "code": "A1",
+          "label_is": "Lokaritgerðir",
+          "evidence_hint_is": "Eintak af ritgerð þarf að fylgja.",
+          "description_hint_is": "Háskóli, ár, titill, blaðsíðufjöldi og einingafjöldi ef við á.",
+          "source": [
+            "matskerfi-2013",
+            "almennar-leidbeiningar-2024"
+          ],
+          "children": [
+            {
+              "code": "A1.1",
+              "label_is": "Kandidats- eða meistararitgerð",
+              "points": 15
+            },
+            {
+              "code": "A1.2",
+              "label_is": "Doktorsritgerð",
+              "points": 30
+            }
+          ]
+        },
+        {
+          "code": "A2",
+          "label_is": "Bækur",
+          "evidence_hint_is": "Eitt eintak af bók þarf að fylgja; handrit eða próförk nægja ekki.",
+          "description_hint_is": "Titill, ártal, útgefandi, blaðsíðufjöldi og höfundar.",
+          "source": [
+            "matskerfi-2013",
+            "almennar-leidbeiningar-2024"
+          ],
+          "children": [
+            {
+              "code": "A2.1",
+              "label_is": "Ritrýnd útgáfa hjá virtustu vísindaforlögum heims",
+              "points_max": 100
+            },
+            {
+              "code": "A2.2",
+              "label_is": "Alþjóðleg ritrýnd útgáfa og innlend ritrýnd útgáfa með alþjóðlega skírskotun",
+              "points_max": 75
+            },
+            {
+              "code": "A2.3",
+              "label_is": "Íslensk eða erlend ritrýnd útgáfa sem einkum miðast við staðbundið fræðasamfélag",
+              "points_max": 50
+            },
+            {
+              "code": "A2.4",
+              "label_is": "Aðrar bækur",
+              "points_max": 25
+            },
+            {
+              "code": "A2.5",
+              "label_is": "Endurútgáfur",
+              "points_max": 10
+            }
+          ]
+        },
+        {
+          "code": "A3",
+          "label_is": "Bókakaflar",
+          "evidence_hint_is": "Ljósrit af bókarkafla ásamt forsíðu bókar og efnisyfirliti; sérprent nægir einnig.",
+          "description_hint_is": "Titill bókarkafla, nafn bókar, útgáfuár, útgefandi, blaðsíðutal og höfundar.",
+          "source": [
+            "matskerfi-2013",
+            "almennar-leidbeiningar-2024"
+          ],
+          "children": [
+            {
+              "code": "A3.1",
+              "label_is": "Ritrýnd útgáfa hjá virtustu vísindaforlögum heims",
+              "points": 20
+            },
+            {
+              "code": "A3.2",
+              "label_is": "Alþjóðleg ritrýnd útgáfa og innlend ritrýnd útgáfa með alþjóðlega skírskotun",
+              "points": 15
+            },
+            {
+              "code": "A3.3",
+              "label_is": "Íslensk eða erlend ritrýnd útgáfa sem einkum miðast við staðbundið fræðasamfélag",
+              "points": 10
+            },
+            {
+              "code": "A3.4",
+              "label_is": "Kaflar í öðrum bókum",
+              "points_min": 0,
+              "points_max": 5
+            }
+          ]
+        },
+        {
+          "code": "A4",
+          "label_is": "Tímaritsgreinar",
+          "evidence_hint_is": "Tilvísun í grein á heimasíðu eða í gagnabanka nægir; annars ljósrit greinar, forsíðu/titilsíðu og efnisyfirlit.",
+          "description_hint_is": "Titill greinar, nafn tímarits, útgáfuár og tölublað, útgefandi, blaðsíðutal, öll nöfn höfunda og DOI eða tengill.",
+          "source": [
+            "matskerfi-2013",
+            "almennar-leidbeiningar-2024"
+          ],
+          "children": [
+            {
+              "code": "A4.1",
+              "label_is": "Grein birt í ISI-tímariti með háan áhrifastuðul og í A-flokki skv. ERIH",
+              "points": 20
+            },
+            {
+              "code": "A4.2",
+              "label_is": "Aðrar greinar í ISI-tímaritum, Scopus-tímaritum, B-flokki skv. ERIH eða 1. einkunn í könnun fyrir tímarit",
+              "points": 15
+            },
+            {
+              "code": "A4.3",
+              "label_is": "Greinar í C-flokki í ERIH og greinar sem fá 2. einkunn í könnun fyrir tímarit",
+              "points": 10
+            },
+            {
+              "code": "A4.4",
+              "label_is": "Greinar birtar í tímaritum sem fá 3. einkunn í könnun fyrir tímarit",
+              "points": 5
+            }
+          ]
+        },
+        {
+          "code": "A5",
+          "label_is": "Greinar í ráðstefnuritum",
+          "evidence_hint_is": "Tilvísun í heimasíðu/gagnabanka; annars ljósrit ráðstefnugreinar, forsíðu og efnisyfirlits ráðstefnurits.",
+          "description_hint_is": "Ráðstefna óskammstöfuð, hver heldur hana, staður, dagsetningar, titill, rit, útgefandi, blaðsíður og höfundar.",
+          "source": [
+            "matskerfi-2013",
+            "almennar-leidbeiningar-2024"
+          ],
+          "children": [
+            {
+              "code": "A5.1",
+              "label_is": "Grein birt í ráðstefnuriti í úrvalsflokki",
+              "points": 10
+            },
+            {
+              "code": "A5.2",
+              "label_is": "Grein í öðru ráðstefnuriti",
+              "points_min": 3,
+              "points_max": 5
+            }
+          ]
+        },
+        {
+          "code": "A6",
+          "label_is": "Fyrirlestrar og veggspjöld",
+          "annual_cap_points": 20,
+          "evidence_hint_is": "Dagskrá ráðstefnu eða fundar þarf að fylgja; boðsbréf fyrir A6.1 og A6.2.",
+          "description_hint_is": "Nafn erindis eða veggspjalds, ráðstefna, staður, dagsetning, höfundar og flytjandi.",
+          "source": [
+            "matskerfi-2013",
+            "almennar-leidbeiningar-2024"
+          ],
+          "children": [
+            {
+              "code": "A6.1",
+              "label_is": "Plenum-fyrirlestur eða inngangsfyrirlestur á alþjóðlegri vísindaráðstefnu",
+              "points": 5,
+              "review_note": "May be assessed at 10 points for very large conferences with more than 1,000 participants."
+            },
+            {
+              "code": "A6.2",
+              "label_is": "Opinber boðsfyrirlestur við erlendan háskóla",
+              "points": 3
+            },
+            {
+              "code": "A6.3",
+              "label_is": "Erindi á alþjóðlegri ráðstefnu",
+              "points": 3
+            },
+            {
+              "code": "A6.4",
+              "label_is": "Erindi á innlendri ráðstefnu",
+              "points": 2
+            },
+            {
+              "code": "A6.5",
+              "label_is": "Erindi á fræðilegu málþingi, málstofu eða fundi fyrir faghópa",
+              "points": 1
+            },
+            {
+              "code": "A6.6",
+              "label_is": "Veggspjald á alþjóðlegri ráðstefnu",
+              "points": 2
+            },
+            {
+              "code": "A6.7",
+              "label_is": "Veggspjald á innlendri ráðstefnu",
+              "points": 1
+            }
+          ]
+        },
+        {
+          "code": "A7",
+          "label_is": "Fræðileg ritstjórn",
+          "source": [
+            "matskerfi-2013",
+            "almennar-leidbeiningar-2024"
+          ],
+          "children": [
+            {
+              "code": "A7.1",
+              "label_is": "Ritstjóri vísindatímarits",
+              "points_min": 3,
+              "points_max": 6,
+              "unit_is": "stig/hefti",
+              "evidence_hint_is": "Forsíða tímarits og síða eða vefheimild með upplýsingum um ritstjóra og ritstjórn."
+            },
+            {
+              "code": "A7.2",
+              "label_is": "Ritstjóri bókar",
+              "points_min": 5,
+              "points_max": 20,
+              "evidence_hint_is": "Forsíða bókar og síða eða vefheimild með upplýsingum um ritstjórn; handrit eða próförk nægja ekki."
+            }
+          ]
+        },
+        {
+          "code": "A8",
+          "label_is": "Skýrslur, ritdómar og þýðingar",
+          "source": [
+            "matskerfi-2013",
+            "almennar-leidbeiningar-2024"
+          ],
+          "children": [
+            {
+              "code": "A8.1",
+              "label_is": "Skýrslur",
+              "points_min": 0,
+              "points_max": 3
+            },
+            {
+              "code": "A8.2",
+              "label_is": "Ritdómar",
+              "points_min": 1,
+              "points_max": 3
+            },
+            {
+              "code": "A8.3",
+              "label_is": "Þýðingar á fræðilegum greinum, bókarköflum og öðrum stuttum ritverkum",
+              "points_min": 0,
+              "points_max": 5
+            },
+            {
+              "code": "A8.4",
+              "label_is": "Þýðingar á fræðibókum",
+              "points_min": 10,
+              "points_max": 25
+            }
+          ]
+        },
+        {
+          "code": "A9",
+          "label_is": "Námsefnisgerð fyrir leik-, grunn- og framhaldsskóla",
+          "source": [
+            "matskerfi-2013",
+            "almennar-leidbeiningar-2024"
+          ],
+          "children": [
+            {
+              "code": "A9.1",
+              "label_is": "Námefnisgerð",
+              "points_min": 0,
+              "points_max": 10,
+              "evidence_hint_is": "Námsefni, kennsluleiðbeiningar og greinargerð eftir atvikum."
+            }
+          ]
+        },
+        {
+          "code": "A10",
+          "label_is": "Nýsköpun og yfirfærsla þekkingar",
+          "source": [
+            "matskerfi-2013",
+            "almennar-leidbeiningar-2024"
+          ],
+          "children": [
+            {
+              "code": "A10.1",
+              "label_is": "Sprotafyrirtæki, hönnun, nýsköpun og þekkingaryfirfærsla",
+              "points_min": 0,
+              "points_max": 20,
+              "review_note": "2024 guidance labels A10.1 as Þátttaka í hönnunar- og skipulagssamkeppni; reconcile with current rules before use."
+            },
+            {
+              "code": "A10.2",
+              "label_is": "Hugbúnaður",
+              "points_min": 0,
+              "points_max": 20,
+              "review_note": "2024 guidance narrows this to rannsóknarhugbúnaður and requires an associated peer-reviewed A4 article."
+            },
+            {
+              "code": "A10.3",
+              "label_is": "Sálfræðipróf",
+              "points_min": 0,
+              "points_max": 5
+            },
+            {
+              "code": "A10.4",
+              "label_is": "Lagafrumvörp",
+              "points_default": 2,
+              "points_max": 10
+            },
+            {
+              "code": "A10.5",
+              "label_is": "Einkaleyfi",
+              "points_min": 10,
+              "points_max": 15,
+              "review_note": "2013 source gives 10 points when a patent application is published plus 5 if granted; 2024 guidance gives 5 for priority application plus 10 for later PCT/national filing."
+            },
+            {
+              "code": "A10.6",
+              "label_is": "Þróunarstarf í skólum og öðrum stofnunum",
+              "points_min": 0,
+              "points_max": 10
+            },
+            {
+              "code": "A10.7",
+              "label_is": "Nýsköpun í listum",
+              "points_min": 0,
+              "points_max": 40,
+              "review_note": "Appendix II subcodes transcribed as draft; likely less relevant to this profile and not reviewed in depth.",
+              "children": [
+                {
+                  "code": "A10.7.1",
+                  "label_is": "Stór einkasýning í viðurkenndu listasafni samþykkt af listráði",
+                  "points_min": 10,
+                  "points_max": 30
+                },
+                {
+                  "code": "A10.7.2",
+                  "label_is": "Einkasýning eða þátttaka í samsýningu í viðurkenndu listasafni eða á alþjóðlegum lista- og menningarhátíðum",
+                  "points_min": 0,
+                  "points_max": 15
+                },
+                {
+                  "code": "A10.7.3",
+                  "label_is": "Viðamikil frumsamin tónsmíð eða leikverk sem flutt er opinberlega af viðurkenndum listamönnum",
+                  "points_min": 10,
+                  "points_max": 30
+                },
+                {
+                  "code": "A10.7.4",
+                  "label_is": "Frumsamin tónsmíð eða leikverk sem flutt er opinberlega af viðurkenndum listamönnum",
+                  "points_min": 0,
+                  "points_max": 10
+                },
+                {
+                  "code": "A10.7.5",
+                  "label_is": "Tónlistarflutningur/leiktúlkun á alþjóðlegum lista- og menningarhátíðum, á opinberum áskriftartónleikum eða í viðurkenndu leikhúsi",
+                  "points_min": 0,
+                  "points_max": 15
+                },
+                {
+                  "code": "A10.7.6",
+                  "label_is": "Tónleikahald eða viðamikil leiktúlkun",
+                  "points_min": 0,
+                  "points_max": 10
+                },
+                {
+                  "code": "A10.7.7",
+                  "label_is": "Útgefnar hljóðritanir",
+                  "points_min": 0,
+                  "points_max": 10
+                },
+                {
+                  "code": "A10.7.8",
+                  "label_is": "Bókmenntatextar",
+                  "points_min": 0,
+                  "points_max": 10
+                },
+                {
+                  "code": "A10.7.9",
+                  "label_is": "Bókarverk",
+                  "points_min": 10,
+                  "points_max": 40
+                },
+                {
+                  "code": "A10.7.10",
+                  "label_is": "Þýðingar á bókarköflum og öðrum stuttum ritverkum sem hafa listrænt gildi",
+                  "points_min": 0,
+                  "points_max": 5
+                },
+                {
+                  "code": "A10.7.11",
+                  "label_is": "Þýðingar á bókum sem hafa listrænt gildi",
+                  "points_min": 10,
+                  "points_max": 25
+                },
+                {
+                  "code": "A10.7.12",
+                  "label_is": "Hönnunarverk, sýningarstjórn eða leikstjórn",
+                  "points_min": 0,
+                  "points_max": 10
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "A11",
+          "label_is": "Tilvitnanir",
+          "source": [
+            "matskerfi-2013",
+            "almennar-leidbeiningar-2024"
+          ],
+          "tiers": [
+            {
+              "threshold_is": "Fyrstu 10 tilvitnanir",
+              "points_per_citation": 1
+            },
+            {
+              "threshold_is": "Næstu 20 tilvitnanir",
+              "points_per_citation": 0.5
+            },
+            {
+              "threshold_is": "Tilvitnanir umfram 30",
+              "points_per_citation": 0.1
+            },
+            {
+              "threshold_is": "Tilvitnanir umfram 2.000",
+              "points_per_citation": 0.05
+            }
+          ],
+          "review_note": "2013 names ISI databases; 2024 guidance says Web of Science or Scopus, with Scopus used if neither is selected."
+        },
+        {
+          "code": "A12",
+          "label_is": "Styrkir úr samkeppnissjóðum",
+          "points_min": 0,
+          "points_max": 20,
+          "unit_is": "stig/ári",
+          "evidence_hint_is": "Vísinda- og nýsköpunarsvið aflar staðfestinga úr bókhaldskerfi; undirritað samkomulag um skiptingu stiga ef við á.",
+          "description_hint_is": "Nafn sjóðs og upphæð styrks.",
+          "source": [
+            "matskerfi-2013",
+            "almennar-leidbeiningar-2024"
+          ],
+          "grant_tiers": [
+            {
+              "amount_million_isk_min": 0.5,
+              "amount_million_isk_max": 1.999,
+              "points": 1
+            },
+            {
+              "amount_million_isk_min": 2,
+              "amount_million_isk_max": 3.999,
+              "points": 2
+            },
+            {
+              "amount_million_isk_min": 4,
+              "amount_million_isk_max": 6.999,
+              "points": 3
+            },
+            {
+              "amount_million_isk_min": 7,
+              "amount_million_isk_max": 9.999,
+              "points": 4
+            },
+            {
+              "amount_million_isk_min": 10,
+              "points_rule_is": "Eitt stig fyrir hverjar 10 milljónir/ári eftir það, að hámarki 20 stig/ári."
+            }
+          ],
+          "international_competitive_multiplier": 2,
+          "cap_after_multiplier_points": 20
+        }
+      ]
+    },
+    {
+      "code": "B",
+      "label_is": "Kennsla",
+      "entries": [
+        {
+          "code": "B1",
+          "label_is": "Kennslureynsla",
+          "source": [
+            "matskerfi-2013",
+            "almennar-leidbeiningar-2024"
+          ],
+          "children": [
+            {
+              "code": "B1.1",
+              "label_is": "Aðjunkt, lektor, dósent eða prófessor, fullt starf",
+              "points": 10,
+              "unit_is": "stig/ári"
+            },
+            {
+              "code": "B1.2",
+              "label_is": "Stundakennari sem hefur umsjón með námskeiðum",
+              "points": 2,
+              "unit_is": "stig/ári fyrir hvert námskeið",
+              "annual_cap_points": 6,
+              "review_note": "2024 guidance says 2 points for teaching a whole course and 1 point for at least 50% of a course; confirm current interpretation."
+            },
+            {
+              "code": "B1.3",
+              "label_is": "Kennslutækninámskeið",
+              "points_min": 0,
+              "points_max": 2
+            }
+          ]
+        },
+        {
+          "code": "B2",
+          "label_is": "Kennslurit",
+          "source": [
+            "matskerfi-2013",
+            "almennar-leidbeiningar-2024"
+          ],
+          "children": [
+            {
+              "code": "B2.1",
+              "label_is": "Smárit eða kennsluefni á vefnum",
+              "points_min": 0,
+              "points_max": 3
+            },
+            {
+              "code": "B2.2",
+              "label_is": "Kennslurit, kennslubækur",
+              "points_min": 5,
+              "points_max": 60
+            }
+          ]
+        },
+        {
+          "code": "B3",
+          "label_is": "Leiðbeining stúdenta og andmæli",
+          "evidence_hint_is": "Ekki þarf fylgigögn ef forskráð á framtalsvef; annars titilsíða/efnisyfirlit eða önnur staðfesting.",
+          "description_hint_is": "Nafn nemanda, titill ritgerðar, stofnun, blaðsíðufjöldi, einingafjöldi og leiðbeinendur eða nefndarmenn.",
+          "source": [
+            "matskerfi-2013",
+            "almennar-leidbeiningar-2024"
+          ],
+          "children": [
+            {
+              "code": "B3.1",
+              "label_is": "Við meistaraverkefni",
+              "points_min": 2,
+              "points_max": 4
+            },
+            {
+              "code": "B3.2",
+              "label_is": "Við doktorsverkefni",
+              "points": 10
+            },
+            {
+              "code": "B3.3",
+              "label_is": "Seta í doktorsnefnd",
+              "points": 3
+            },
+            {
+              "code": "B3.4",
+              "label_is": "Andmælandi við doktorsvörn",
+              "points": 3
+            },
+            {
+              "code": "B3.5",
+              "label_is": "Leiðbeining á grunnstigi",
+              "review_note": "Mentioned in 2024 guidance for post-2020 supervision but point value was not transcribed from the supplied extract; review current rules before use."
+            }
+          ]
+        },
+        {
+          "code": "B4",
+          "label_is": "Nýsköpun í kennslu",
+          "points_min": 2,
+          "points_max": 10,
+          "evidence_hint_is": "Stutt skýrsla og staðfesting frá þriðja aðila, til dæmis deildarforseta.",
+          "source": [
+            "matskerfi-2013",
+            "almennar-leidbeiningar-2024"
+          ],
+          "review_note": "2013 extraction labels this as '4. Nýsköpun í kennslu'; stored as B4 to match 2024 guidance."
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "label_is": "Stjórnun",
+      "source": [
+        "matskerfi-2013",
+        "almennar-leidbeiningar-2024"
+      ],
+      "note_is": "Stjórnun á vegum deilda er að jafnaði ekki metin samkvæmt 2013 textanum; umfang ræður stigamati í C1, C4 og C5.",
+      "entries": [
+        {
+          "code": "C1",
+          "label_is": "Formaður námsbrautar",
+          "points_min": 5,
+          "points_max": 10,
+          "unit_is": "stig/ári"
+        },
+        {
+          "code": "C2",
+          "label_is": "Formaður í starfsnefnd háskólaráðs og fastadómnefnd fræðasviðs",
+          "points": 10,
+          "unit_is": "stig/ári"
+        },
+        {
+          "code": "C3",
+          "label_is": "Formaður í helstu starfnefndum fræðasviða",
+          "points": 5,
+          "unit_is": "stig/ári"
+        },
+        {
+          "code": "C4",
+          "label_is": "Forstöðumaður rannsóknastofnunar",
+          "points_min": 5,
+          "points_max": 15,
+          "unit_is": "stig/ári"
+        },
+        {
+          "code": "C5",
+          "label_is": "Deildarforseti/deildarformaður",
+          "points_min": 25,
+          "points_max": 50,
+          "unit_is": "stig/ári"
+        },
+        {
+          "code": "C6",
+          "label_is": "Fræðasviðsforseti",
+          "points": 75,
+          "unit_is": "stig/ári"
+        },
+        {
+          "code": "C7",
+          "label_is": "Rektor",
+          "points": 100,
+          "unit_is": "stig/ári"
+        },
+        {
+          "code": "C8",
+          "label_is": "Aðstoðarrektor",
+          "points": 50,
+          "unit_is": "stig/ári"
+        },
+        {
+          "code": "C9",
+          "label_is": "Seta í háskólaráði",
+          "points": 5,
+          "unit_is": "stig/ári"
+        },
+        {
+          "code": "C10",
+          "label_is": "Seta í nefnd á vegum háskólaráðs eða rektors",
+          "points": 2,
+          "unit_is": "stig/ári"
+        },
+        {
+          "code": "C11",
+          "label_is": "Formaður í nefnd á vegum háskólaráðs eða rektors",
+          "points": 3,
+          "unit_is": "stig/ári"
+        },
+        {
+          "code": "C12",
+          "label_is": "Seta í dómnefnd um störf við háskóla",
+          "points": 2,
+          "annual_cap_points": 10
+        }
+      ]
+    },
+    {
+      "code": "D",
+      "label_is": "Þjónusta",
+      "source": [
+        "matskerfi-2013",
+        "almennar-leidbeiningar-2024"
+      ],
+      "review_note": "2013 D5-D8 numbering differs from the 2024 guidance, where D5 is Vísindamiðlun, D6 is Sprotafyrirtæki og nytjaleyfissamningar, and D7 is Styrkir frá öðrum en samkeppnissjóðum.",
+      "entries": [
+        {
+          "code": "D1",
+          "label_is": "Skipulagning alþjóðlegrar vísindaráðstefnu",
+          "points_min": 2,
+          "points_max": 10,
+          "evidence_hint_is": "Dagskrá ráðstefnu með upplýsingum um skipulagsaðila."
+        },
+        {
+          "code": "D2",
+          "label_is": "Opinber matsstörf",
+          "points_min": 0,
+          "points_max": 2,
+          "evidence_hint_is": "Staðfesting á starfinu frá þriðja aðila."
+        },
+        {
+          "code": "D3",
+          "label_is": "Seta í nefndum eða stjórnum",
+          "points_min": 0,
+          "points_max": 2,
+          "evidence_hint_is": "Staðfesting á starfinu frá þriðja aðila."
+        },
+        {
+          "code": "D4",
+          "label_is": "Álitsgerðir og skýrslur",
+          "points_min": 0,
+          "points_max": 5,
+          "evidence_hint_is": "Afrit af skýrslu eða tilvísun á vef."
+        },
+        {
+          "code": "D5",
+          "label_is": "Hugbúnaður",
+          "points_min": 0,
+          "points_max": 10,
+          "review_note": "2013 label. In 2024 guidance D5 is Vísindamiðlun á fagsviði starfsmanns; review before assigning new records."
+        },
+        {
+          "code": "D6",
+          "label_is": "Fræðsluefni fyrir almenning",
+          "points_min": 0,
+          "points_max": 20,
+          "review_note": "2013 label. In 2024 guidance startup/licensing appears as D6 with detailed impact tiers.",
+          "children": [
+            {
+              "code": "D6.1",
+              "label_is": "Bækur almenns eðlis",
+              "points_min": 0,
+              "points_max": 20
+            },
+            {
+              "code": "D6.2",
+              "label_is": "Þýðingar almenns eðlis",
+              "points_min": 0,
+              "points_max": 10
+            },
+            {
+              "code": "D6.3",
+              "label_is": "Ritstjórn bóka og tímarita almenns eðlis",
+              "points_min": 0,
+              "points_max": 6
+            },
+            {
+              "code": "D6.4",
+              "label_is": "Grein í tímariti almenns eðlis",
+              "points_min": 0,
+              "points_max": 5
+            },
+            {
+              "code": "D6.5",
+              "label_is": "Ritdómur eða listdómur í fjölmiðli",
+              "points": 1,
+              "annual_cap_points": 10
+            },
+            {
+              "code": "D6.6",
+              "label_is": "Grein í dagblaði eða samning þáttar í öðrum fjölmiðli",
+              "points_min": 0,
+              "points_max": 10,
+              "annual_cap_points": 10
+            },
+            {
+              "code": "D6.7",
+              "label_is": "Erindi á málstofu eða málþingi ætluðu almenningi",
+              "points": 1
+            },
+            {
+              "code": "D6.8",
+              "label_is": "Upplýsingamiðlun og álitsgjöf",
+              "points_min": 0,
+              "points_max": 10,
+              "annual_cap_points": 10
+            }
+          ]
+        },
+        {
+          "code": "D7",
+          "label_is": "Sprotafyrirtæki",
+          "points_min": 0,
+          "points_max": 50,
+          "review_note": "2013 label. 2024 guidance gives detailed D6.1-D6.4 impact tiers for sprotafyrirtæki og nytjaleyfissamningar."
+        },
+        {
+          "code": "D8",
+          "label_is": "Styrkir frá öðrum en samkeppnissjóðum",
+          "points_min": 0,
+          "points_max": 20,
+          "review_note": "2013 code. 2024 guidance refers to this as D7.",
+          "grant_tiers": [
+            {
+              "amount_million_isk_min": 0.5,
+              "amount_million_isk_max": 1.999,
+              "points": 1
+            },
+            {
+              "amount_million_isk_min": 2,
+              "amount_million_isk_max": 3.999,
+              "points": 2
+            },
+            {
+              "amount_million_isk_min": 4,
+              "amount_million_isk_max": 6.999,
+              "points": 3
+            },
+            {
+              "amount_million_isk_min": 7,
+              "amount_million_isk_max": 9.999,
+              "points": 4
+            },
+            {
+              "amount_million_isk_min": 10,
+              "points_rule_is": "Eitt stig fyrir hverjar 10 milljónir/ári eftir það, að hámarki 20 stig/ári."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "E",
+      "label_is": "Fyrri störf (vegna grunnmats)",
+      "source": [
+        "matskerfi-2013",
+        "almennar-leidbeiningar-2024"
+      ],
+      "entries": [
+        {
+          "code": "E1",
+          "label_is": "Starfsreynsla",
+          "points": 10,
+          "unit_is": "stig/ári",
+          "review_note": "Only for grunnmat; points for prior work plus teaching cannot exceed 10 per year."
+        }
+      ]
+    },
+    {
+      "code": "F",
+      "label_is": "Almennt / Föst árleg stig",
+      "source": [
+        "matskerfi-2013",
+        "almennar-leidbeiningar-2024"
+      ],
+      "review_note": "2013 labels this Almennt; 2024 guidance labels this Föst árleg stig.",
+      "entries": [
+        {
+          "code": "F1",
+          "label_is": "Starfsreynslustig sérfræðinga, fræðimanna og vísindamanna",
+          "points_by_research_duty_percent": {
+            "40": 10,
+            "60": 7,
+            "80": 3
+          },
+          "annual_cap_points": 10
+        }
+      ]
+    },
+    {
+      "code": "G",
+      "label_is": "Frávik",
+      "source": "almennar-leidbeiningar-2024",
+      "review_note": "Included from 2024 guidance only; current point handling must be reviewed against the active rules."
+    }
+  ]
+}

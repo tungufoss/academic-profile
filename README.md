@@ -47,7 +47,8 @@ The intended package shape is:
 - `academic_profile.publications` for publication records and grouping helpers.
 - `academic_profile.cv` for explicit CV/profile selection helpers.
 - `academic_profile.projects`, `academic_profile.activities`, and `academic_profile.evidence` for public-safe record metadata.
-- `academic_profile.reporting` for reporting source metadata and plugin protocols.
+- `academic_profile.reporting` for reporting source metadata, scheme shapes, and plugin protocols.
+- `academic_profile.schemes` for optional, source-cited reporting-scheme plugins and their public scheme data.
 - `academic_profile.cli` for command-line tools that can run in CI without interactive prompts.
 
 Core package code should remain independent from any one website, university, theme, or CV design. Reporting-specific logic belongs behind module or plugin boundaries so the generic profile model remains reusable.
@@ -58,9 +59,11 @@ The current CLI is intentionally small:
 
 ```bash
 academic-profile doctor
+academic-profile schemes
+academic-profile schemes icelandic-universities --review-notes
 ```
 
-It verifies that the package is installed and prints a machine-readable status object. Future commands should keep inputs and outputs explicit and avoid interactive prompts by default.
+`doctor` verifies that the package is installed and prints a machine-readable status object. `schemes` validates the bundled reporting-scheme data, prints a JSON summary, and exits non-zero when a scheme fails validation, so it can be used as a CI check. Future commands should keep inputs and outputs explicit and avoid interactive prompts by default.
 
 ## Reporting Scheme Policy
 
@@ -72,7 +75,7 @@ Reporting scheme modules must be source-cited and public-safe. Each scheme shoul
 - Mark ambiguous rules or locally variable practices for human review.
 - Keep fixtures synthetic or clearly public.
 
-Future work may include a plugin for Icelandic public-university reporting schemes. That code should live outside the core package, for example as a separate distribution named `academic-profile-icelandic-universities`, and implement the protocol in `academic_profile.reporting`. Initial public source references for that work are tracked in [docs/reporting-schemes.md](docs/reporting-schemes.md).
+The package ships one scheme plugin, `icelandic-universities`, for the Icelandic public-universities evaluation scheme *Matskerfi opinberra háskóla* used for *framtal starfa*. It lives behind the plugin boundary in `academic_profile.schemes.icelandic_universities`, keeps Icelandic labels as published, links both public source documents instead of bundling them, and marks unresolved interpretations for human review. Its data is `draft_for_review`: it is safe to inspect and to build on, but not authoritative for scoring until the open questions in [docs/reporting-schemes.md](docs/reporting-schemes.md) are resolved by a human.
 
 ## Development
 
