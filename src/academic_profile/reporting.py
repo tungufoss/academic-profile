@@ -18,6 +18,8 @@ class ReportingSource:
     published_on: str | None = None
 
     def __post_init__(self) -> None:
+        if not self.title.strip():
+            raise ValueError("reporting source title must not be empty")
         if not self.url.strip():
             raise ValueError("reporting source URL must not be empty")
         if not self.reviewed_on.strip():
