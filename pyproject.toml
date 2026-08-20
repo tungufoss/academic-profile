@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "academic-profile"
+version = "0.1.0"
+description = "Reusable, public-safe Python helpers for structured academic profile data."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+  { name = "academic-profile contributors" },
+]
+keywords = ["academic-profile", "cv", "publications", "research"]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = [
+  "pytest>=8",
+]
+
+[project.scripts]
+academic-profile = "academic_profile.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/tungufoss/academic-profile"
+Issues = "https://github.com/tungufoss/academic-profile/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/academic_profile"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]

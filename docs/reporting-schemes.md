@@ -22,3 +22,15 @@ Future work may include a plugin for Icelandic public-university or Matskerfi re
 - Matskerfi opinberra haskola, December 2013: <https://fh.hi.is/files/2023-07/matskerfi_opinberra_haskola_des_2013.pdf>
 
 These references are starting points only. Any implementation should review the current public sources, cite the exact reviewed documents, and flag uncertain interpretations for human review.
+
+## Suggested Plugin Boundary
+
+Icelandic public-universities reporting should remain outside the generic core package unless a rule is clearly reusable across reporting schemes. A future plugin can:
+
+- Depend on `academic-profile`.
+- Implement `academic_profile.reporting.ReportingPlugin`.
+- Publish its source list as `ReportingSource` records.
+- Keep synthetic fixtures in its own test suite.
+- Return plain dictionaries or typed records that can later be rendered by separate reporting/export adapters.
+
+This keeps `academic_profile` useful for generic publications, CV selections, projects, activities, and evidence metadata while allowing public, source-cited reporting rules to evolve independently.

@@ -1,0 +1,23 @@
+{
+  "publications": [
+    {
+      "id": "pub-synthetic-2026",
+      "title": "Synthetic Study of Open Academic Profiles",
+      "authors": ["Ada Example", "Bjarni Sample"],
+      "year": 2026,
+      "venue": "Journal of Reusable Examples",
+      "tags": ["selected", "open"],
+      "source_urls": ["https://example.org/publication"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "project-synthetic-open-data",
+      "title": "Open Profile Data Toolkit",
+      "role": "Contributor",
+      "start_year": 2025,
+      "tags": ["open"],
+      "source_urls": ["https://example.org/project"]
+    }
+  ]
+}
