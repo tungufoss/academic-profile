@@ -111,7 +111,10 @@ class IcelandicUniversitiesReporting:
         }
 
         if code is None:
-            result["review_notes"] = [f"record {record.id} declares no {CODE_EXTRA_KEY}"]
+            result["review_notes"] = [
+                f"record {record.id} declares no {CODE_EXTRA_KEY} extra "
+                f"and no {CODE_TAG_PREFIX}<code> tag"
+            ]
             return result
 
         entry = scheme.entry(code)

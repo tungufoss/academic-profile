@@ -132,3 +132,41 @@ def test_point_value_rejects_mixed_or_inverted_ranges():
 def test_reporting_source_requires_review_date():
     with pytest.raises(ValueError, match="review date must not be empty"):
         ReportingSource(title="Example", url="https://example.org", reviewed_on=" ")
+
+
+
+def test_point_value_default_only_is_not_a_range():
+    """A bare default is a single suggested score, not a bounded range."""
+    assert not PointValue(default=3.0).is_range
+    assert PointValue(minimum=1.0, maximum=4.0).is_range
+    assert PointValue(maximum=4.0).is_range
+    assert not PointValue(exact=2.0).is_range
+
+
+def test_duplicate_codes_are_detected_case_insensitively():
+    """entry() folds case, so validation must too or a code becomes unreachable."""
+    data = synthetic_scheme_data()
+    entries = data["sections"][0]["entries"]
+    clash = {"code": entries[0]["code"].lower(), "label_is": "Árekstur", "points": 1}
+    entries.append(clash)
+
+    with pytest.raises(SchemeError, match="duplicate entry code"):
+        ReportingScheme.from_mapping(data)
+
+
+def test_blank_optional_fields_are_treated_as_absent():
+    """Hand-edited scheme data uses blanks for "not set", not for a real value."""
+    data = synthetic_scheme_data()
+    entry = data["sections"][0]["entries"][0]
+    entry["review_note"] = "   "
+    entry["unit_is"] = "  "
+
+    scheme = ReportingScheme.from_mapping(data)
+    found = scheme.entry(entry["code"])
+
+    assert found.review_note is None
+    assert found.unit_is is None
+    # A blank numeric field must not be a hard failure either: it is simply
+    # absent, exactly as if the key had been omitted.
+    entry["points"] = "  "
+    assert ReportingScheme.from_mapping(data).entry(entry["code"]).points is None

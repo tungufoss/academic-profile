@@ -106,9 +106,13 @@ class PointValue:
 
     @property
     def is_range(self) -> bool:
-        """Return whether the entry is scored within a range rather than exactly."""
+        """Return whether the entry is scored within a range rather than exactly.
 
-        return self.exact is None
+        A value carrying only a ``default`` is not a range — it is a single
+        suggested score with no bounds.
+        """
+
+        return self.exact is None and (self.minimum is not None or self.maximum is not None)
 
     def to_dict(self) -> dict[str, float]:
         """Return only the point fields that are set."""
@@ -169,7 +173,13 @@ class SchemeEntry:
             if key not in data:
                 raise SchemeError(f"scheme entry is missing key {key!r}")
 
-        points = {name: float(data[key]) for key, name in _ENTRY_POINT_KEYS.items() if data.get(key) is not None}
+        # _optional_float, not float(): a blank numeric field in hand-edited
+        # scheme data means "not set", and must not be a hard failure.
+        points = {
+            name: value
+            for key, name in _ENTRY_POINT_KEYS.items()
+            if (value := _optional_float(data.get(key))) is not None
+        }
         return cls(
             code=str(data["code"]),
             label_is=str(data["label_is"]),
@@ -253,11 +263,14 @@ class ReportingScheme:
         if not self.sections:
             raise SchemeError(f"scheme {self.id} must define at least one section")
 
+        # entry() looks codes up case-insensitively, so detect duplicates the
+        # same way — otherwise A1 and a1 both validate but only one is reachable.
         seen: set[str] = set()
         for entry in self.walk():
-            if entry.code in seen:
+            folded = entry.code.upper()
+            if folded in seen:
                 raise SchemeError(f"scheme {self.id} has duplicate entry code {entry.code}")
-            seen.add(entry.code)
+            seen.add(folded)
 
         known_source_ids = {source.source_id for source in self.sources if source.source_id}
         for section in self.sections:
@@ -349,11 +362,23 @@ class ReportingPlugin(Protocol):
 
 
 def _optional_str(value: Any) -> str | None:
-    return None if value is None else str(value)
+    """Hand-edited scheme data uses blanks for "not set"; treat them as absent."""
+    if value is None:
+        return None
+    text = str(value).strip()
+    return text or None
 
 
 def _optional_float(value: Any) -> float | None:
-    return None if value is None else float(value)
+    """As _optional_str: a blank numeric field is absent, not a hard failure."""
+    if value is None:
+        return None
+    if isinstance(value, str):
+        text = value.strip()
+        if not text:
+            return None
+        return float(text)
+    return float(value)
 
 
 def _source_ids(value: Any) -> tuple[str, ...]:

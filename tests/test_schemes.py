@@ -94,7 +94,8 @@ def test_classify_never_guesses_a_code():
     assert result["matched"] is False
     assert result["code"] is None
     assert result["needs_review"] is True
-    assert result["review_notes"] == ["record pub-synthetic declares no matskerfi_code"]
+    assert result["review_notes"] == ["record pub-synthetic declares no matskerfi_code extra "
+        "and no matskerfi:<code> tag"]
 
 
 def test_classify_flags_unknown_codes():
