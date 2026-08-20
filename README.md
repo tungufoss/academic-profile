@@ -6,7 +6,19 @@ This repository is deliberately generic. It must not contain personal academic r
 
 ## Status
 
-This project is in early public setup. The documentation defines the repository boundaries and intended package architecture before the first stable release. Public APIs, command-line tools, and plugin entry points may change until a versioned release says otherwise.
+This project is in early public setup. The repository now contains an installable package skeleton with placeholder public APIs, a CLI, tests, and CI. Public APIs, command-line tools, and plugin entry points may change until a versioned release says otherwise.
+
+## Installation
+
+For local development:
+
+```bash
+python -m pip install -e ".[test]"
+python -m pytest
+academic-profile doctor
+```
+
+The import package name is `academic_profile`.
 
 ## Scope
 
@@ -32,13 +44,23 @@ This repository is not a personal website, private archive, reporting submission
 
 The intended package shape is:
 
-- Core data models for academic profile records.
-- Parsers and validators that accept explicit inputs and return explicit outputs.
-- Rendering adapters that produce portable, theme-neutral output formats.
-- Optional plugin-style modules for public reporting schemes.
-- Command-line tools that can run in CI without interactive prompts.
+- `academic_profile.publications` for publication records and grouping helpers.
+- `academic_profile.cv` for explicit CV/profile selection helpers.
+- `academic_profile.projects`, `academic_profile.activities`, and `academic_profile.evidence` for public-safe record metadata.
+- `academic_profile.reporting` for reporting source metadata and plugin protocols.
+- `academic_profile.cli` for command-line tools that can run in CI without interactive prompts.
 
 Core package code should remain independent from any one website, university, theme, or CV design. Reporting-specific logic belongs behind module or plugin boundaries so the generic profile model remains reusable.
+
+## CLI
+
+The current CLI is intentionally small:
+
+```bash
+academic-profile doctor
+```
+
+It verifies that the package is installed and prints a machine-readable status object. Future commands should keep inputs and outputs explicit and avoid interactive prompts by default.
 
 ## Reporting Scheme Policy
 
@@ -50,7 +72,7 @@ Reporting scheme modules must be source-cited and public-safe. Each scheme shoul
 - Mark ambiguous rules or locally variable practices for human review.
 - Keep fixtures synthetic or clearly public.
 
-Future work may include a plugin for Icelandic public-university reporting schemes. Initial public source references for that work are tracked in [docs/reporting-schemes.md](docs/reporting-schemes.md).
+Future work may include a plugin for Icelandic public-university reporting schemes. That code should live outside the core package, for example as a separate distribution named `academic-profile-icelandic-universities`, and implement the protocol in `academic_profile.reporting`. Initial public source references for that work are tracked in [docs/reporting-schemes.md](docs/reporting-schemes.md).
 
 ## Development
 
